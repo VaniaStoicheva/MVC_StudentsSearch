@@ -1,7 +1,7 @@
 <?php
 
-class Speciality_model extends CI_Model
-{
+class Speciality_model extends CI_Model {
+
     function __construct() {
         parent::__construct();
         $this->load->helper('url');
@@ -48,8 +48,8 @@ class Speciality_model extends CI_Model
         }
     }
 
-    function edit_speciality($speciality_id,$new_long_name, $new_short_name) {
-        
+    function edit_speciality($speciality_id, $new_long_name, $new_short_name) {
+
         $data = array(
             'speciality_name_long' => $new_long_name,
             'speciality_name_short' => $new_short_name
@@ -65,23 +65,24 @@ class Speciality_model extends CI_Model
         }
     }
 
-    function selected_speciality($speciality_id){
-        
-        $this->db->where('speciality_id',$speciality_id);
-        $query=$this->db->get('specialities');
-        
+    function selected_speciality($speciality_id) {
+
+        $this->db->where('speciality_id', $speciality_id);
+        $query = $this->db->get('specialities');
+
         return $query->result_array();
     }
-    function deleted($speciality_id){
-        
-        $this->db->where('speciality_id',$speciality_id);
+
+    function deleted($speciality_id) {
+
+        $this->db->where('speciality_id', $speciality_id);
         $this->db->delete('specialities');
-        
-        if($this->db->affected_rows()==1){
+
+        if ($this->db->affected_rows() == 1) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
-}
 
+}

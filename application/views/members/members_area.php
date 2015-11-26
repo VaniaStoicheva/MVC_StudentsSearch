@@ -7,8 +7,6 @@
 <?= form_submit('students', 'студенти'); ?>
 <?= form_submit('course', 'курсове'); ?>
 <?= form_submit('assesments', 'оценки'); ?>
-
-
 <?= form_fieldset_close(); ?>
 <?= form_close(); ?>
 

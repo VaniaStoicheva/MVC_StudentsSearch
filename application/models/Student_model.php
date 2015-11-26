@@ -65,12 +65,9 @@ class Student_model extends CI_Model {
         }
     }
 
-    function edit_student($student_id,$student_fname, $student_lname, 
-            $student_email, $student_fnumber, 
-            $student_course_id, $student_speciality_id, $student_education_form) {
+    function edit_student($student_id, $student_fname, $student_lname, $student_email, $student_fnumber, $student_course_id, $student_speciality_id, $student_education_form) {
 
         $datas = array(
-          
             'student_fname' => $student_fname,
             'student_lname' => $student_lname,
             'student_fnumber' => $student_fnumber,
@@ -81,7 +78,7 @@ class Student_model extends CI_Model {
         );
 
         $this->db->where('student_id', $student_id);
-         //$this->db->set($datas);
+        //$this->db->set($datas);
         $this->db->update('students', $datas);
 
         if ($this->db->affected_rows() == 1) {

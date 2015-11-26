@@ -16,7 +16,7 @@
 
                 <thead>
                     <tr>
-                         <th>
+                        <th>
 
                             <?=
                             anchor(site_url('Student/display/student_id/') . '/'
@@ -53,14 +53,14 @@
                         <tr>
                             <td><?= $student['student_id']; ?></td>
                             <td><?= $student['student_fnumber']; ?></td>
-                            <td><?= $student['student_fname'].' '.$student['student_lname']; ?></td>
+                            <td><?= $student['student_fname'] . ' ' . $student['student_lname']; ?></td>
                             <td><?= $student['student_email']; ?></td>
                             <td><?= $student['course_name']; ?></td>
                             <td><?= $student['speciality_name_long']; ?></td>
                             <td><?= $student['student_education_form']; ?></td>
                             <td><?= anchor(site_url('Student/edit/') . '/' . "$student[student_id]", 'промени'); ?></td>
-                            <td><?=anchor(site_url('Student/delete/') . '/' . "$student[student_id]", 'изтрии', array('class' => 'delete', 'onclick' => "return confirm('Сигурни ли сте че искате да изтриете  $student[student_id]?')"));
-                                ?></td>
+                            <td><?= anchor(site_url('Student/delete/') . '/' . "$student[student_id]", 'изтрии', array('class' => 'delete', 'onclick' => "return confirm('Сигурни ли сте че искате да изтриете  $student[student_id]?')"));
+                        ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

@@ -1,7 +1,7 @@
 <?php
 
-class Subject_model extends CI_Model
-{
+class Subject_model extends CI_Model {
+
     function __construct() {
         parent::__construct();
         $this->load->helper('url');
@@ -20,9 +20,9 @@ class Subject_model extends CI_Model
     }
 
     function match($subject_name) {
-        
+
         $this->db->where('subject_name', $subject_name);
-       $this->db->get('subjects');
+        $this->db->get('subjects');
 
         if ($this->db->affected_rows() == 1) {
             return false;
@@ -31,7 +31,7 @@ class Subject_model extends CI_Model
         }
     }
 
-    function create($subject_name, $lectures,$exercises) {
+    function create($subject_name, $lectures, $exercises) {
         $data = array(
             'subject_id' => 'subject_id',
             'subject_name' => $subject_name,
@@ -49,12 +49,12 @@ class Subject_model extends CI_Model
         }
     }
 
-    function edit_subject($subject_id,$new_subject_name, $new_lectures,$new_exercises) {
-       
+    function edit_subject($subject_id, $new_subject_name, $new_lectures, $new_exercises) {
+
         $data = array(
             'subject_name' => $new_subject_name,
             'subject_workload_lectures' => $new_lectures,
-            'subject_workload_exercises'=>$new_exercises
+            'subject_workload_exercises' => $new_exercises
         );
 
         $this->db->where('subject_id', $subject_id);
@@ -67,25 +67,24 @@ class Subject_model extends CI_Model
         }
     }
 
-    function selected_subject($subject_id){
-        
-        $this->db->where('subject_id',$subject_id);
-        $query=$this->db->get('subjects');
-        
+    function selected_subject($subject_id) {
+
+        $this->db->where('subject_id', $subject_id);
+        $query = $this->db->get('subjects');
+
         return $query->result_array();
     }
-    function deleted($subject_id){
-        
-        $this->db->where('subject_id',$subject_id);
+
+    function deleted($subject_id) {
+
+        $this->db->where('subject_id', $subject_id);
         $this->db->delete('subjects');
-        
-        if($this->db->affected_rows()==1){
+
+        if ($this->db->affected_rows() == 1) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
+
 }
-
-
-

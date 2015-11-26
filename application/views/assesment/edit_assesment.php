@@ -27,8 +27,8 @@
     <?= form_input('assesment') . "<br/>"; ?>
     <?= form_error('assesment'); ?>
     <br/>
-<?= form_submit('edit', 'Променете хорариуми и оценка'); ?>
-<?= form_submit('cancel', 'Отказ'); ?>
-<?= form_submit('update', 'Обнови'); ?>
-<?= form_close(); ?>
+    <?= form_submit('edit', 'Променете хорариуми и оценка'); ?>
+    <?= form_submit('cancel', 'Отказ'); ?>
+    <?= form_submit('update', 'Обнови'); ?>
+    <?= form_close(); ?>
 <p><?= anchor('Assesment', 'Изход'); ?></p>

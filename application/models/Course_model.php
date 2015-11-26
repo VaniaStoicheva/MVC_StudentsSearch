@@ -1,6 +1,7 @@
 <?php
-class Course_model extends CI_Model
-{
+
+class Course_model extends CI_Model {
+
     function __construct() {
         parent::__construct();
     }
@@ -77,17 +78,13 @@ class Course_model extends CI_Model
         return $q->num_rows();
     }
 
-    function search($sort_by, $sort_order,$per_page,$offset)
-    {
-        $this->db->order_by($sort_by,$sort_order);
-        $this->db->limit($per_page,$offset);
-        $q=$this->db->get('courses');
+    function search($sort_by, $sort_order, $per_page, $offset) {
+        $this->db->order_by($sort_by, $sort_order);
+        $this->db->limit($per_page, $offset);
+        $q = $this->db->get('courses');
         return $q->result_array();
     }
-        
-  
 
-     
 }
 
 ?>
